@@ -1,9 +1,9 @@
-# MQTT broker
-MQTT_BROKER = "localhost"
-MQTT_PORT = 1883
+from dotenv import load_dotenv
+import os
 
-# AQICN API token
-AQICN_TOKEN = "4a544f314a62cda419c4b509219d6721dbc64f12"
+load_dotenv()  # load variables from .env file
 
-# Update interval in seconds
-UPDATE_INTERVAL = 60
+MQTT_BROKER = os.getenv("MQTT_BROKER")
+MQTT_PORT = int(os.getenv("MQTT_PORT"))
+AQICN_TOKEN = os.getenv("AQICN_TOKEN")
+UPDATE_INTERVAL = int(os.getenv("UPDATE_INTERVAL"))
